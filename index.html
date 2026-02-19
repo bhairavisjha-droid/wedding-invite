@@ -546,8 +546,12 @@ select { color:#3d2c2e; }
 
             <select id="attendance" name="Attendance" required onchange="handleAttendance()">
                 <option value="" disabled selected hidden>Will you attend?</option>
-                <option value="yes">Yes, with joy! 💕</option>
-                <option value="no">Regretfully, cannot attend</option>
+                <!-- <option value="yes">Yes, with joy! 💕</option>
+                <option value="no">Regretfully, cannot attend</option> -->
+                <option value="bothDays">Joyfully attending both celebrations (16th & 17th)💕</option> 
+                <option value="16thAprilOnly">Will join us on 16th April (Haldi, Engagement & Sangeet)</option>
+                <option value="17thAprilOnly">Will join us on 17th April (Wedding Ceremony & Reception)</option>
+                <option value="no">Regretfully unable to attend 🤍</option>
             </select>
 
             <select id="guests" name="Guests" required>
@@ -689,3 +693,4 @@ musicBtn.addEventListener("click", function () {
 
 </body>
 </html>
+
