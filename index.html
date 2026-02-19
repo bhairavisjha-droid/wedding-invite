@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhairavi & Gaurav | Save The Date</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family:'Poppins', sans-serif;
+    overflow-x:hidden;
+    color:white;
+}
+
+/* ================= VIDEO BACKGROUND ================= */
+
+.video-container {
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+}
+
+.video-bg {
+    position:absolute;
+    top:50%;
+    left:50%;
+    min-width:100%;
+    min-height:100%;
+    object-fit:cover;
+    z-index:-2;
+    animation:slowZoom 60s ease-in-out infinite alternate;
+    filter:blur(3px) brightness(0.8);
+    transform:translate(-50%, -50%) scale(1.08);
+}
+
+.overlay {
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.35);
+    z-index:-1;
+}
+
+/* ================= HERO ================= */
+
+.hero-content {
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.subtitle { 
+    letter-spacing: 6px;
+    font-size: 1.3rem;   /* Bigger on desktop */
+    font-weight: 300;
+    margin-bottom: 18px;
+    opacity: 0.95;
+}
+
+h1 {
+    font-family:'Cormorant Garamond', serif;
+    font-size:4.5rem;
+    letter-spacing:4px;
+    margin:15px 0;
+}
+
+.couple-name {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.couple-name span {
+    display: inline-block;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+
+    .couple-name {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .name-top {
+    animation: fadeUp 1s ease forwards;
+            }
+    .name-bottom {
+        font-size: 4.2rem;      /* Bigger */
+        line-height: 1.05;
+        letter-spacing: 2px;
+        animation: fadeUp 1.6s ease forwards;
+    }
+
+    .amp {
+        font-size: 2.6rem;
+        color: white;           /* Now white */
+        margin: 5px 0;
+        animation: fadeUp 1.3s ease forwards;
+    }
+
+    .subtitle {
+        font-size: 1.15rem;
+        letter-spacing: 4px;
+        margin-bottom: 20px;
+    }
+
+    .date {
+        font-size: 1.05rem;
+        letter-spacing: 2px;
+        margin-top: 20px;
+    }
+
+    /* Slight vertical centering improvement */
+    .hero-content {
+        padding: 40px 20px;
+    }
+    @keyframes fadeUp {
+    from { opacity:0; transform: translateY(15px); }
+    to { opacity:1; transform: translateY(0); }
+    }
+}
+
+
+
+.date { font-size:1.2rem; letter-spacing:3px; }
+
+/* ================= EVENTS SECTION ================= */
+
+.section {
+    padding:100px 20px;
+    text-align:center;
+    position: relative;
+    overflow: hidden;
+    color:#3d2c2e;
+
+    background: linear-gradient(
+        to bottom,
+        #f4e6ea 0%,
+        #f8edf0 50%,
+        #f6e9ed 100%
+    );
+}
+
+/* ================= CINEMATIC BORDER FRAME ================= */
+
+.section {
+    position: relative;
+}
+
+/* Animated luxury border */
+/* ================= EVENT BORDER FRAME ================= */
+
+.events {
+    position: relative;
+    z-index: 2;
+    max-width: 620px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 40px 30px; /* Important: creates space inside border */
+}
+
+/* Animated border around events only */
+.events::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1.5px solid rgba(198,168,90,0.6);
+    border-radius: 25px;
+    pointer-events: none;
+    z-index: -1;
+
+    box-shadow: 0 0 25px rgba(198,168,90,0.08);
+
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255,255,255,0.4) 50%,
+        transparent 100%
+    );
+    background-size: 200% 200%;
+    animation: borderShimmer 8s ease-in-out infinite;
+}
+
+
+/* Border animation */
+@keyframes borderShimmer {
+    0% { background-position: -200% 0; }
+    50% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Soft cinematic center glow */
+.section::before {
+    content:"";
+    position:absolute;
+    width:900px;
+    height:600px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.15) 40%, transparent 70%);
+    animation:lightShift 12s ease-in-out infinite alternate;
+    pointer-events:none;
+    z-index:0;
+}
+
+/* Subtle vignette depth */
+.section::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.05) 100%);
+    pointer-events:none;
+    z-index:0;
+}
+
+/* Luxury shimmer sweep on title */
+.section h2 {
+    font-family:'Great Vibes', cursive;
+    font-size:4rem;
+    text-shadow:0px 4px 15px rgba(0,0,0,0.08);
+    position:relative;
+    z-index:2;
+    display:inline-block;
+    background:linear-gradient(120deg, #3d2c2e 40%, #c6a85a 50%, #3d2c2e 60%);
+    background-size:200% auto;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:shimmer 6s linear infinite;
+}
+
+.flourish {
+    font-size:1.8rem;
+    color:#c6a85a;
+    margin:15px 0 40px 0;
+    position:relative;
+    z-index:2;
+}
+
+.events {
+    position:relative;
+    z-index:2;
+    max-width:620px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.event {
+    background:rgba(255,255,255,0.55);
+    padding:25px 20px;
+    border-radius:10px;
+    backdrop-filter:blur(8px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+
+    opacity:0;
+    transform:translateY(40px);
+    transition:opacity 0.8s ease, transform 0.8s ease, box-shadow 0.4s ease;
+}
+
+/* Subtle hover lift */
+.event:hover {
+    transform:translateY(-5px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.event.visible {
+    opacity:1;
+    transform:translateY(0);
+}
+
+.event.visible:hover {
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.event strong {
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.7rem;
+    display:block;
+}
+
+.divider {
+    width:70px;
+    height:1px;
+    background:#c6a85a;
+    margin:12px auto;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Gold glow on divider */
+.divider::after {
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent);
+    animation:dividerGlow 4s ease-in-out infinite;
+}
+
+.event span {
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.2rem;
+}
+
+.venue-link {
+    text-decoration:none;
+    color:#3d2c2e;
+    transition:all 0.3s ease;
+}
+
+.venue-link:hover {
+    color:#c6a85a;
+}
+
+/* ================= RSVP BUTTON ================= */
+
+button {
+    margin-top:40px;
+    padding:14px 35px;
+    border:1px solid #3d2c2e;
+    background:transparent;
+    color:#3d2c2e;
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.1rem;
+    letter-spacing:4px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover {
+    background:#3d2c2e;
+    color:white;
+}
+
+/* ================= RSVP FORM ================= */
+
+.rsvp-form {
+    display:none;
+    max-width:400px;
+    margin:35px auto 0;
+    text-align:center;
+}
+
+input, select {
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+}
+
+select:invalid { color:#888; }
+select { color:#3d2c2e; }
+
+.miss-you {
+    opacity:0;
+    transform:translateY(10px);
+    margin-top:10px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.2rem;
+    color:#7a4e57;
+    transition:opacity 1s ease, transform 1s ease;
+}
+
+.success-message {
+    display:none;
+    margin-top:25px;
+    font-family:'Great Vibes', cursive;
+    font-size:2rem;
+    color:#7a4e57;
+}
+
+/* Floating hearts */
+.heart {
+    position:fixed;
+    bottom:0;
+    font-size:20px;
+    animation:floatUp 3s ease forwards;
+    pointer-events:none;
+}
+
+/* Subtle sparkle */
+.sparkle {
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:#c6a85a;
+    border-radius:50%;
+    opacity:0;
+    animation:sparkleAnim 6s infinite;
+}
+
+@keyframes sparkleAnim {
+    0%,100% { opacity:0; transform:scale(0.5); }
+    50% { opacity:0.7; transform:scale(1); }
+}
+
+@keyframes dividerGlow {
+    0%,100% { transform:translateX(-100%); }
+    50% { transform:translateX(100%); }
+}
+
+@keyframes shimmer {
+    0% { background-position:-200% center; }
+    100% { background-position:200% center; }
+}
+
+@keyframes lightShift {
+    0% { transform:translate(-50%,-50%) scale(1); }
+    100% { transform:translate(-50%,-50%) scale(1.1); }
+}
+
+@keyframes floatUp {
+    0% { transform:translateY(0); opacity:1; }
+    100% { transform:translateY(-200px); opacity:0; }
+}
+
+@keyframes slowZoom {
+    from { transform:translate(-50%,-50%) scale(1.08); }
+    to   { transform:translate(-50%,-50%) scale(1.15); }
+}
+
+/* ================= MUSIC BUTTON ================= */
+
+/* Clean floating music icon — no background */
+/* Ultra clean floating music icon */
+.music-btn {
+    position: fixed;
+    bottom: 25px;   /* Bottom right */
+    right: 25px;
+    background: transparent !important;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 9999;
+    padding: 0;
+    opacity: 0.85;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Remove any hover background */
+.music-btn:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: scale(1.18);
+    opacity: 1;
+}
+
+/* Remove focus outline */
+.music-btn:focus {
+    outline: none;
+}
+
+
+@keyframes pulseMusic {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+    100% { transform: scale(1); }
+}
+
+
+</style>
+</head>
+
+<button id="musicToggle" class="music-btn">
+    ♫
+</button>
+<body>
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<section class="video-container">
+    <video autoplay muted loop playsinline class="video-bg">
+        <source src="background.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <div class="subtitle">SAVE THE DATE</div>
+        <h1 class="couple-name">
+            <span class="name-top">Bhairavi</span>
+            <span class="amp">&</span>
+            <span class="name-bottom">Gaurav</span>
+        </h1>
+        <div class="date">16th & 17th April | Gurgaon, India</div>
+    </div>
+</section>
+
+<section class="section">
+    
+    <h2>Wedding Celebrations</h2>
+    <div class="flourish">❦</div>
+
+    <div class="events">
+        <div class="event">
+            <strong>🎶16th April</strong>
+            <div class="divider"></div>
+            <span>Haldi • Engagement • Sangeet</span>
+        </div>
+
+        <div class="event">
+            <strong>🥂17th April</strong>
+            <div class="divider"></div>
+            <span>Varmala & Reception</span>
+        </div>
+
+        <div class="event venue">
+            <strong>📍Venue</strong>
+            <div class="divider"></div>
+            <span>
+                <a href="https://www.google.com/maps/search/?api=1&query=Aapno+Ghar+Sector+77+Gurgaon"
+                    target="_blank"
+                    class="venue-link">
+                    Aapno Ghar, Gurgaon Sector 77
+                </a>
+            </span>
+        </div>
+    </div>
+
+    <button onclick="toggleRSVP()">RSVP</button>
+
+    <div class="rsvp-form" id="rsvpForm">
+        <form id="rsvpFormElement"
+                action="https://formsubmit.co/bhairavigaurav@gmail.com"
+                method="POST">
+            <input type="text" name="Name" placeholder="Your Name" required>
+
+            <select id="attendance" name="Attendance" required onchange="handleAttendance()">
+                <option value="" disabled selected hidden>Will you attend?</option>
+                <option value="yes">Yes, with joy! 💕</option>
+                <option value="no">Regretfully, cannot attend</option>
+            </select>
+
+            <select id="guests" name="Guests" required>
+                <option value="" disabled selected hidden>Number of Guests including you</option>
+                <option>1</option><option>2</option><option>3</option>
+                <option>4</option><option>5</option>
+            </select>
+
+            <div id="missYouMessage" class="miss-you">
+                We’ll miss you and will celebrate together soon 🤍
+            </div>
+            <input type="hidden" name="_subject" value="New Wedding RSVP 💍">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <!-- <input type="hidden" name="_next" value=""> -->
+
+            <button type="submit">Send RSVP</button>
+        </form>
+
+        <div id="successMessage" class="success-message">
+            Thank you for your response 🤍<br>
+        </div>
+    </div>
+
+</section>
+
+<script>
+
+/* Scroll reveal */
+const events = document.querySelectorAll('.event');
+function revealOnScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
+    events.forEach(event => {
+        if (event.getBoundingClientRect().top < triggerBottom) {
+            event.classList.add('visible');
+        }
+    });
+}
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+
+/* Toggle RSVP */
+function toggleRSVP() {
+    const form = document.getElementById("rsvpForm");
+    form.style.display = form.style.display === "block" ? "none" : "block";
+}
+
+/* Attendance logic */
+function handleAttendance() {
+    const attendance = document.getElementById("attendance").value;
+    const guests = document.getElementById("guests");
+    const message = document.getElementById("missYouMessage");
+
+    if (attendance === "no") {
+        guests.disabled = true;
+        guests.value = "";
+        guests.style.opacity = "0.5";
+        message.style.opacity = "1";
+        message.style.transform = "translateY(0)";
+    } else {
+        guests.disabled = false;
+        guests.style.opacity = "1";
+        message.style.opacity = "0";
+        message.style.transform = "translateY(10px)";
+    }
+}
+
+/* Submit */
+// document.getElementById("rsvpFormElement").addEventListener("submit", function(e){
+//     e.preventDefault();
+//     this.style.display="none";
+//     document.getElementById("successMessage").style.display="block";
+//     launchHearts();
+// });
+document.getElementById("rsvpFormElement").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const form = this;
+
+    fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+        form.style.display = "none";
+        document.getElementById("successMessage").style.display = "block";
+        launchHearts();
+    })
+    .catch(error => {
+        alert("Something went wrong. Please try again.");
+    });
+});
+
+/* Hearts */
+function launchHearts(){
+    for(let i=0;i<20;i++){
+        let heart=document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML="🤍";
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.fontSize=(15+Math.random()*20)+"px";
+        document.body.appendChild(heart);
+        setTimeout(()=>{heart.remove();},3000);
+    }
+}
+
+/* Add subtle sparkles */
+for(let i=0;i<6;i++){
+    let sparkle=document.createElement("div");
+    sparkle.classList.add("sparkle");
+    sparkle.style.top=Math.random()*100+"%";
+    sparkle.style.left=Math.random()*100+"%";
+    sparkle.style.animationDelay=Math.random()*6+"s";
+    document.querySelector(".section").appendChild(sparkle);
+}
+
+/* Background Music Start from 22s */
+/* Music Toggle Logic */
+const musicBtn = document.getElementById("musicToggle");
+
+musicBtn.addEventListener("click", function () {
+
+    if (bgMusic.paused) {
+        bgMusic.currentTime = 22;   // Start at 22 seconds
+        bgMusic.volume = 0.6;
+        bgMusic.play();
+        musicBtn.classList.add("playing");
+        musicBtn.innerHTML = "❚❚";  // Pause icon
+    } else {
+        bgMusic.pause();
+        musicBtn.classList.remove("playing");
+        musicBtn.innerHTML = "♫";   // Music icon
+    }
+
+});
+
+</script>
+
+</body>
+</html>
