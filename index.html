@@ -679,14 +679,14 @@ for(let i=0;i<6;i++){
     document.querySelector(".section").appendChild(sparkle);
 }
 
-/* Background Music Start from 22s */
+/* Background Music Start from 0 sec */
 /* Music Toggle Logic */
 const musicBtn = document.getElementById("musicToggle");
 
 musicBtn.addEventListener("click", function () {
 
     if (bgMusic.paused) {
-        bgMusic.currentTime = 22;   // Start at 22 seconds
+        bgMusic.currentTime = 0;   // Start at 0 seconds
         bgMusic.volume = 0.6;
         bgMusic.play();
         musicBtn.classList.add("playing");
